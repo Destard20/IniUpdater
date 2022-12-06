@@ -64,12 +64,10 @@ for file in fileList:
         config.write(fileW)
     
     with open(file, 'r') as fileR:
-        newFile = fileR.read()
-        
-    if(originalFile != newFile):
-        fileCambiati.append(file)
-    else:
-        fileNonCambiati.append(file)
+        if(originalFile != fileR.read()):
+            fileCambiati.append(file)
+        else:
+            fileNonCambiati.append(file)
         
 
 
